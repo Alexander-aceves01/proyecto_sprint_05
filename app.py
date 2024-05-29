@@ -2,6 +2,8 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+st.markdown('# Análisis de venta')
+
 # Leer los datos
 vehicles = pd.read_csv('vehicles_us.csv')
 
