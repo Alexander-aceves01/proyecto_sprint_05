@@ -21,16 +21,16 @@ if hist_button:
     # Mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig_hist, use_container_width=True)
 
-# Crear un botón para el gráfico de dispersión
-scatter_button = st.button('Construir gráfico de dispersión')
+# Crear una casilla de verificación para el gráfico de dispersión
+scatter_checkbox = st.checkbox('Construir gráfico de dispersión', key='scatter')
 
-# Al hacer clic en el botón del gráfico de dispersión
-if scatter_button:
+# Si la casilla del gráfico de dispersión está marcada
+if scatter_checkbox:
     # Escribir un mensaje
     st.write('Creación de un gráfico de dispersión para el conjunto de datos de anuncios de venta de coches')
     
     # Crear un gráfico de dispersión
-    fig_scatter = px.scatter(vehicles, x="odometer", y="price", title="Precio vs. Kilometraje")
+    fig_scatter = px.scatter(car_data, x="odometer", y="price", title="Precio vs. Kilometraje")
     
     # Mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig_scatter, use_container_width=True)
